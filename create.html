@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script type="text/javascript">
+            function next1(){
+            document.getElementById("1").addEventListener("submit",function(event){event.preventDefault();});
+            document.getElementById("1").style.visibility="hidden";
+            document.getElementById("2").style.visibility="visible";
+            document.getElementById("3").style.visibility="hidden";
+            document.getElementById("4").style.visibility="hidden";
+            }
+
+            function next2(){
+            document.getElementById("2").addEventListener("submit",function(event){event.preventDefault();});
+            document.getElementById("1").style.visibility="hidden";
+            document.getElementById("2").style.visibility="hidden";
+            document.getElementById("3").style.visibility="visible";
+            document.getElementById("4").style.visibility="hidden";
+            }
+
+            function next3(){
+            document.getElementById("3").addEventListener("submit",function(event){event.preventDefault();});
+            document.getElementById("1").style.visibility="hidden";
+            document.getElementById("2").style.visibility="hidden";
+            document.getElementById("3").style.visibility="hidden";
+            document.getElementById("4").style.visibility="visible";
+            }
+
+            function back1(){
+            document.getElementById("2").addEventListener("submit",function(event){event.preventDefault();});
+            document.getElementById("1").style.visibility="visible";
+            document.getElementById("2").style.visibility="hidden";
+            document.getElementById("3").style.visibility="hidden";
+            document.getElementById("4").style.visibility="hidden";
+            }
+
+            function back2(){
+            document.getElementById("3").addEventListener("submit",function(event){event.preventDefault();});
+            document.getElementById("1").style.visibility="hidden";
+            document.getElementById("2").style.visibility="visible";
+            document.getElementById("3").style.visibility="hidden";
+            document.getElementById("4").style.visibility="hidden";
+            }
+            
+        </script>
+</head>
+<body>
+    <form action="" method="POST" id="1" style="visibility:visible;">
+        <fieldset>
+            First name:
+            <input type="text" name="firstname" placeholder="first name">
+            <br>
+            Last name:
+            <input type="text" name="lastname" placeholder="last name">
+            <br>
+            <input type="submit" name="submit1" value="next" onclick="next1()">
+         </fieldset>
+    </form>
+
+    <form action="" method="POST" id="2" style="visibility:hidden;">
+        <fieldset>
+            Password:
+            <input type="text" name="password" placeholder="password">
+            <br>
+            Email:
+            <br>
+            <input type="text" name="email" placeholder="email">
+            <br>
+            <a href="javascript: void(0);"  value="back"  onclick="back1();">back1</a>
+            <input type="submit" name="submit2" value="next" onclick="next2()">
+        </fieldset>
+    </form>
+
+    <form action="" method="POST" id="3" style="visibility:hidden;">
+        <fieldset>
+            Gender<br>
+            <input type="radio" name="gender" value="male">male
+            <input type="radio" name="gender" value="female">female
+            <br>
+            <a href="javascript: void(0);" value="back" onclick="back2();">back2</a>
+            <input type="submit" name="submit3" value="next" onclick="next3()">
+        </fieldset>
+    </form>
+    <h1 id="4" style="visibility:hidden;">Record has submitted</h1>
+</body>
+</html>
